@@ -6,7 +6,7 @@ ListingScraperAPI based nodejs platform, using Cheerio Lib (jquery core)
 # Structure
 ```
 -lib
-    |- queryScraper.js
+    |- listingScraperAPI.js
 -sites
     |- // put controller here
 app.js
