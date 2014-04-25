@@ -2,7 +2,6 @@ var fs = require('fs');
 exports.scraper = {
     page: 0,
     limit: 1,    
-    $: null,
     name:'cnet',
     url: 'http://download.cnet.com/windows/',
     setup:function(){
@@ -20,17 +19,17 @@ exports.scraper = {
       }
       fs.writeFileSync('data/'+this.name,this.limit);      
     },
-    getPagingUrl: function() {
-        var link = this.$('.latestReviews a.seeAll').attr('href');
+    getPagingUrl: function($) {
+        var link = $('.latestReviews a.seeAll').attr('href');
         var links = link.split('.html');
         return links[0] + '-#pagenumber.html' + links[1];
     },
-    nextPage: function(url) {
+    nextPage: function($,url) {
         this.page++;
         if (this.page > this.limit) {
             return false;
         }
-        if (this.$('.noResultsTitle').length > 0) {
+        if ($('.noResultsTitle').length > 0) {
             return false;
         }
         return 'http://download.cnet.com' + url.replace('#pagenumber', this.page);
