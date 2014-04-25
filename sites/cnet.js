@@ -5,6 +5,9 @@ exports.scraper = {
     name:'cnet',
     url: 'http://download.cnet.com/windows/',
     setup:function(){
+      this.page=0;
+      this.limit=1;
+      this.$=null;
       if(fs.existsSync('data/'+this.name)){
       var start=parseInt(fs.readFileSync('data/'+this.name));
       this.page=start;
