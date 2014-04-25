@@ -1,4 +1,4 @@
-listingScraperAPI (Async Scraper)
+listingScraperAPI (Async Scraper+jQuery Selector)
 =================
 
 ListingScraperAPI based nodejs platform, using Cheerio Lib (jquery core)
