@@ -1,1 +1,1 @@
-require('./sites/queryScraper.js').start();
+require('./lib/listingScraperAPI.js').start();
