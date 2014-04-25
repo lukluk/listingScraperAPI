@@ -75,7 +75,7 @@ exports.scraper = {
   		return url.replace('#pagenumber',this.page);      
     },
     list: function($) {
-        // expected return an array that contain listing url on  page
+        // expected return an array that contain product/item url on  page/category page
     },
     fields: {
       //define fileds here, each field need function that can return right value
