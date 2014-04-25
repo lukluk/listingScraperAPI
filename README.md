@@ -24,11 +24,9 @@ Running API port 4000
 ```
 example scraping from http://download.cnet.com 
 
+http://localhost:4000/?site=cnet
 
 cnet is controller filename (cnet.js)
-
-
-http://localhost:4000/?site=cnet
 ```
 [
 {
