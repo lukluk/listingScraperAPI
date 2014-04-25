@@ -15,7 +15,7 @@ app.js
 # How it work
 app.js
 ```
-require('./queryScraper.js').start();
+require('./lib/listingScraperAPI.js').start();
 ```
 starting web server API
 ```
