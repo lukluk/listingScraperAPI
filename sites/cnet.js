@@ -7,7 +7,7 @@ exports.scraper = {
     setup:function(){
       if(fs.existsSync('data/'+this.name)){
       var start=parseInt(fs.readFileSync('data/'+this.name));
-      this.page=this.page+start;
+      this.page=start;
       this.limit=this.limit+start;
         
       }
@@ -17,7 +17,7 @@ exports.scraper = {
       if(!fs.existsSync('data/'+this.name)){
         fs.mkdirSync('data',0777);
       }
-      fs.writeFileSync('data/'+this.name,this.limit);      
+      fs.writeFileSync('data/'+this.name,this.page);      
     },
     getPagingUrl: function($) {
         var link = $('.latestReviews a.seeAll').attr('href');
