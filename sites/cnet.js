@@ -1,18 +1,14 @@
 var fs = require('fs');
+var start=0;
+var limitperPage=1;
+var currentPage=0;
 exports.scraper = {
-    page: 0,
-    limit: 1,    
     name:'cnet',
     url: 'http://download.cnet.com/windows/',
     setup:function(){
-      this.page=0;
-      this.limit=1;
-      this.$=null;
       if(fs.existsSync('data/'+this.name)){
-      var start=parseInt(fs.readFileSync('data/'+this.name));
-      this.page=start;
-      this.limit=this.limit+start;
-        
+        start=parseInt(fs.readFileSync('data/'+this.name));     
+        currentPage=0;
       }
       
     },
@@ -20,7 +16,7 @@ exports.scraper = {
       if(!fs.existsSync('data/'+this.name)){
         fs.mkdirSync('data',0777);
       }
-      fs.writeFileSync('data/'+this.name,this.page);      
+      fs.writeFileSync('data/'+this.name,(start+limitperPage));      
     },
     getPagingUrl: function($) {
         var link = $('.latestReviews a.seeAll').attr('href');
@@ -29,7 +25,7 @@ exports.scraper = {
     },
     nextPage: function($,url) {
         this.page++;
-        if (this.page > this.limit) {
+        if (currentPage > start+limit) {
             return false;
         }
         if ($('.noResultsTitle').length > 0) {
