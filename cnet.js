@@ -8,7 +8,7 @@ exports.scraper = {
     setup:function(){
       if(fs.existsSync('data/'+this.name)){
         start=parseInt(fs.readFileSync('data/'+this.name));     
-        currentPage=0;
+        currentPage=start;
       }
       
     },
@@ -25,12 +25,13 @@ exports.scraper = {
     },
     nextPage: function($,url) {
         currentPage++;
-        if (currentPage > start+limitPage) {
+
+        if (currentPage > start+limitperPage) {
             return false;
-        }
+        }else
         if ($('.noResultsTitle').length > 0) {
             return false;
-        }
+        }else
         return 'http://download.cnet.com' + url.replace('#pagenumber', currentPage);
     },
     list: function($) {
