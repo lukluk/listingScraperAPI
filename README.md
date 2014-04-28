@@ -1,30 +1,33 @@
-listingScraperAPI (Async Scraper+jQuery Selector)
+listingScraperAPI (Async Scraper+jQuery)
 =================
 
 ListingScraperAPI based nodejs platform, using Cheerio Lib (jquery core)
 
-# Structure
-```
--lib
-    |- listingScraperAPI.js
--sites
-    |- // put controller here
-app.js
-    
-```
 # How it work
-app.js
+
+## Installation
 ```
-require('./lib/listingScraperAPI.js').start();
+$ npm install listingscraper
 ```
+## How to use
+```
+var port=4000;
+require('listingscraper').start(__dirname,port);
+``
+
 starting web server API
 ```
 $ node app.js
 Running API port 4000
 ```
-example scraping from http://download.cnet.com 
 
-http://localhost:4000/?site=cnet (cnet is controller filename)
+http://localhost:4000/?site=[site config filename]
+
+example :
+
+example/cnet.js (download.cnet.com)
+
+http://localhost:4000/?site=cnet
 
 sample response/output (JSON)
 ```
