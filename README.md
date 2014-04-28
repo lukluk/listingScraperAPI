@@ -24,8 +24,11 @@ Running API port 4000
 http://localhost:4000/?site=[site config filename]
 
 example :
+
 example/cnet.js (download.cnet.com)
+
 http://localhost:4000/?site=cnet
+
 sample response/output (JSON)
 ```
 [
@@ -48,11 +51,9 @@ filesize: " 7.39MB "
 ...
 ]
 ```
-# Controller Structure
+# Site Config Structure
 ```
 exports.scraper = {
-    page: 0,                //starting page
-    limit: 10,              //limit max page per execution
     name:'SITE NAME',
     url: 'SITE URL',
     setup:function(){
@@ -66,13 +67,10 @@ exports.scraper = {
       // example http://eshop.com/page/#pagenumber/
     },
     nextPage: function(url) {
-  		this.page++;	
-  		if(this.page>this.limit){
-  			return false;
-  		}
-      //you can also check if page valid then return false, if nextPage return false ,looping will stoped
       
-  		return url.replace('#pagenumber',this.page);      
+      // you can return a url or false to stop scraping next page
+      
+
     },
     list: function($) {
         // expected return an array that contain product/item url on  page/category page
