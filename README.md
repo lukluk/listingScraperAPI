@@ -24,11 +24,8 @@ Running API port 4000
 http://localhost:4000/?site=[site config filename]
 
 example :
-
 example/cnet.js (download.cnet.com)
-
 http://localhost:4000/?site=cnet
-
 sample response/output (JSON)
 ```
 [
