@@ -24,14 +24,14 @@ exports.scraper = {
         return links[0] + '-#pagenumber.html' + links[1];
     },
     nextPage: function($,url) {
-        currentPage++;
-        if (currentPage > start+limitPage) {
+        this.page++;
+        if (currentPage > start+limit) {
             return false;
         }
         if ($('.noResultsTitle').length > 0) {
             return false;
         }
-        return 'http://download.cnet.com' + url.replace('#pagenumber', currentPage);
+        return 'http://download.cnet.com' + url.replace('#pagenumber', this.page);
     },
     list: function($) {
         var links = [];

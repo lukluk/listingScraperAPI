@@ -1,7 +1,7 @@
 {
   "name": "listingscraper",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.5",
   "description": "aSync Listing web Scraper",
   "dependencies": {    
     "string": "~1.8.0",
