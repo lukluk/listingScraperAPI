@@ -1,0 +1,24 @@
+{
+  "name": "listingScraper",
+  "private": false,
+  "version": "0.0.0",
+  "description": "aSync Listing web Scraper",
+  "dependencies": {    
+    "string": "~1.8.0",
+    "cheerio": "0.15.0",
+    "request":"2.34.0",
+    "http" :"0.0.0",
+    "url":"0.10.1"
+
+
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "lukluk <luklukaha@gmail.com>",
+  "license": "GPL"
+}
+
