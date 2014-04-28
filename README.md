@@ -3,7 +3,8 @@ listingScraperAPI (Async Scraper+jQuery)
 
 ListingScraperAPI based nodejs platform, using Cheerio Lib (jquery core)
 
-# How it work
+## ScreenCast
+www.youtube.com/watch?v=V7YtXOZ-_dE&feature=youtu.be&hd=1
 
 ## Installation
 ```
@@ -51,7 +52,7 @@ filesize: " 7.39MB "
 ...
 ]
 ```
-# Site Config Structure
+## Site Config Structure
 ```
 exports.scraper = {
     name:'SITE NAME',
